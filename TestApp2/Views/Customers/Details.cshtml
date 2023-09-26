@@ -1,0 +1,28 @@
+﻿@model TestApp2.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer Details</h2>
+
+@if (Model == null)
+{
+    <h2>Customer not found</h2>
+}
+else
+{
+    
+    <div class="card text-bg-dark mb-3 " style="max-width: 25rem;">
+        <div class="card-header bg-primary">@Model.Name</div>
+        <div class="card-body">
+            <h6 class="card-title">Membership Type: @Model.MembershipType.Name</h6>
+            <h6 class="card-title">BirthDay: @Model.BirthDay.ToShortDateString()</h6>
+
+        </div>
+      
+    </div>
+   
+    
+}

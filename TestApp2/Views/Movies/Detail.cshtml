@@ -1,0 +1,27 @@
+﻿@model TestApp2.Models.Movie
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movie Detail</h2>
+
+@if (Model == null)
+{
+    <h4>Movie Not Found</h4>
+}
+else
+{
+   
+    <div class="card text-bg-dark mb-3 " style="max-width: 25rem;">
+        <div class="card-header bg-primary">@Model.Name</div>
+        <div class="card-body">
+            <h6 class="card-title">Genre Type: @Model.GenreType.Name</h6>
+            <h6 class="card-title">Release Date: @Model.RealeaseDate.ToShortDateString()</h6>
+            <h6 class="card-title">Release Date: @Model.DateAdded.ToShortDateString()</h6>
+            <h6 class="card-title">Stock: @Model.NoInStock</h6>
+
+        </div>
+
+    </div>
+}
